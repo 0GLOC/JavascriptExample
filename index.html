@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +10,42 @@
 </head>
 <body>
     <div class="container py-2">
-        <p class="lead"><b>Ingrese Usuario</b></p>
+    <h2><b>Productos en stock:</b></h2>
+    <br>
+    <br>
+    <div class="card-group">
+        <div class="card bg-secondary">
+          <div class="card-body text-center">
+            <h4 class="card-title">Game 1</h4>
+            <p class="card-text">$500</p>
+          </div>
+        </div>
+        <div class="card bg-secondary">
+          <div class="card-body text-center">
+            <h4 class="card-title">Game 2</h4>
+            <p class="card-text">$250</p>
+          </div>
+        </div>
+        <div class="card bg-secondary">
+          <div class="card-body text-center">
+            <h4 class="card-title">Game 3</h4>
+            <p class="card-text">$1.200</p>
+          </div>
+        </div>
+        <div class="card bg-secondary">
+          <div class="card-body text-center">
+            <h4 class="card-title">Game 4</h4>
+            <p class="card-text">$400</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container py-2">
+        <p class="lead"><b>Seleccione el producto</b></p>
         <form>
             <input id="nombre" type="text" placeholder="Ingresa nombre" class="form-control my-2">
-            <input id="edad" type="text" placeholder="Ingresa edad" class="form-control my-2">
             <button id="boton" class="btn btn-secondary" type="reset" onclick="capturar();">Agregar</button>
         </form>
     </div>
@@ -21,8 +53,8 @@
         <table class="table" id="tabla">
             <thead class="thead-inverse">
                 <tr>
-                    <th>Nombre</th>
-                    <th>Edad</th>
+                    <th>Nombre del producto</th>
+                    <th>Precio</th>
                 </tr>
             </thead>
         </table>
