@@ -1,3 +1,14 @@
+//Ejemplo de filtrado para el entregable
+const games = [
+    { nombre: 'game 1', precio: 500},
+    { nombre: 'game 2', precio: 250},
+    { nombre: 'game 3', precio: 1200},
+    { nombre: 'game 4', precio: 400},
+]
+
+const Filtrar = games.filter(x => x.nombre == "game 1")
+
+
 //Función invocada desde form con onclick
 function capturar(){
 
@@ -35,7 +46,7 @@ function capturar(){
 
     nuevoSujeto = new persona(nombreCapturar,precioCapturar);
     console.log(nuevoSujeto);
-
+    
     //Función a invocar
     agregar();
 }
@@ -43,9 +54,13 @@ function capturar(){
 //Array
 let baseDatos= [];
 
+
 //invocación de funcion
 function agregar(){
     baseDatos.push(nuevoSujeto);
     console.log(baseDatos);
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>'+nuevoSujeto.precio+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>$'+nuevoSujeto.precio+'</td><td>$'+" "+'</td></tbody>';
 };
+
+
+

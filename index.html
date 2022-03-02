@@ -46,15 +46,18 @@
         <p class="lead"><b>Seleccione el producto</b></p>
         <form>
             <input id="nombre" type="text" placeholder="Ingresa nombre" class="form-control my-2">
+            <br>
             <button id="boton" class="btn btn-secondary" type="reset" onclick="capturar();">Agregar</button>
         </form>
     </div>
+    <br>
     <div class="container">
         <table class="table" id="tabla">
             <thead class="thead-inverse">
                 <tr>
                     <th>Nombre del producto</th>
                     <th>Precio</th>
+                    <th class="operacion">Total</th>
                 </tr>
             </thead>
         </table>
