@@ -1,12 +1,12 @@
 //Ejemplo de filtrado para el entregable
 const games = [
-    { nombre: 'game 1', precio: 500},
-    { nombre: 'game 2', precio: 250},
-    { nombre: 'game 3', precio: 1200},
-    { nombre: 'game 4', precio: 400},
+    { producto: 'game', nombre: 'game 1', precio: 500},
+    { producto: 'game', nombre: 'game 2', precio: 250},
+    { producto: 'game', nombre: 'game 3', precio: 1200},
+    { producto: 'game', nombre: 'game 4', precio: 400},
 ]
 
-const Filtrar = games.filter(x => x.nombre == "game 1")
+const Filtrar = games.filter(x => x.producto == "game")
 
 
 //Función invocada desde form con onclick
