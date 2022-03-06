@@ -62,5 +62,18 @@ function agregar(){
     document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>$'+nuevoSujeto.precio+'</td><td>$'+" "+'</td></tbody>';
 };
 
+//DOM (Creación de H2 (titulo) mediante createElement)
+(function(window, document,){
+    window.onload = init;
+
+    function init(){
+    const titular = document.getElementById('first');
+    console.log(titular);
+
+    const h = document.createElement('h2');
+    h.textContent = 'Productos en stock:';
+    
+    titular.appendChild(h);}
+})(window, document,);
 
 
