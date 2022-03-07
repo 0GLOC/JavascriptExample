@@ -41,7 +41,7 @@ function capturar(){
     
     if (nombreCapturar !== "game 1" && nombreCapturar !== "game 2" && nombreCapturar !== "game 3" && nombreCapturar !== "game 4"){
         alert("Este producto no existe")
-            nombreCapturar = 0;
+            nombreCapturar = '';
     };
 
     nuevoSujeto = new persona(nombreCapturar,precioCapturar);
