@@ -1,4 +1,4 @@
-//Ejemplo de filtrado para el entregable
+//Productos
 const games = [
     { producto: 'game', name: 'game 1', price: 500},
     { producto: 'game', name: 'game 2', price: 250},
@@ -6,8 +6,38 @@ const games = [
     { producto: 'game', name: 'game 4', price: 400},
 ]
 
-const Filtrar = games.filter(x => x.producto == "game")
+localStorage.setItem("Games" ,JSON.stringify(games));
+let storageGames = JSON.parse(localStorage.getItem("Games"));
+console.log(storageGames);
 
+//JSON
+function allProductsProgramar(){
+    allProducts();
+}
+
+function allProducts(){
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'catalogo.json', true);
+    xhttp.send();
+    xhttp.onreadystatechange = function(){
+
+        if(this.readyState == 4 && this.status == 200){
+            let datosJson = JSON.parse(this.responseText);
+            let res = document.getElementById("tabla");
+
+            for(let item of datosJson){
+                //item. (lo que desee visualizar de mi JSON)
+                //console.log(item)
+                res.innerHTML += `<tr>
+                <td>${item.name}</td>
+                <td>${item.price}</td>
+                <td>$</td>
+                </tr>`;
+            };
+        };
+
+    };
+};
 
 //Función invocada desde form con onclick
 function capturar(){
@@ -21,6 +51,11 @@ function capturar(){
     //variables
     let nombreCapturar = document.getElementById("nombre").value;
     let precioCapturar = 0;
+
+    //Localstorage
+    localStorage.setItem("Array" ,JSON.stringify(nombreCapturar));
+    let arrayRecojido = JSON.parse(localStorage.getItem("Array"));
+    console.log(arrayRecojido);
 
     //Datos primitivos
     if (nombreCapturar === "game 1"){
@@ -41,7 +76,7 @@ function capturar(){
     
     if (nombreCapturar !== "game 1" && nombreCapturar !== "game 2" && nombreCapturar !== "game 3" && nombreCapturar !== "game 4"){
         alert("Este producto no existe")
-            nombreCapturar = '';
+        getElementById("tabla").remove;
     };
 
     nuevoSujeto = new persona(nombreCapturar,precioCapturar);
