@@ -51,23 +51,12 @@ function capturar(){
     let nombreCapturar = document.getElementById("nombre").value;
     let precioCapturar = precioNombres;
 
-    //Datos primitivos (condicionales)
-    if (nombreCapturar === "game 1"){
-        precioCapturar= w;
-    };
+    //Datos primitivos (condicionales + AND)
+    nombreCapturar === "game 1" && (precioCapturar = w);
+    nombreCapturar === "game 2" && (precioCapturar = x);
+    nombreCapturar === "game 3" && (precioCapturar = y);
+    nombreCapturar === "game 4" && (precioCapturar = z);
 
-    if (nombreCapturar === "game 2"){
-        precioCapturar= x;
-    };
-
-    if (nombreCapturar === "game 3"){
-        precioCapturar= y;
-    };
-
-    if (nombreCapturar === "game 4"){
-        precioCapturar= z;
-    };
-    
     if (nombreCapturar !== "game 1" && nombreCapturar !== "game 2" && nombreCapturar !== "game 3" && nombreCapturar !== "game 4"){
         alert("Este producto no existe")
         getElementById("tabla").remove;
