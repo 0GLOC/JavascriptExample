@@ -1,4 +1,12 @@
-//JSON
+//Desestructuración de Arreglo
+const nombres = ["game1", "game2", "game3", "game4"];
+const precioNombres = [500 , 250 , 1200 , 400];
+
+const [a, b, c, d] = nombres;
+const [w, x, y, z] = precioNombres;
+
+
+//JSON (agregar todos los productos button)
 function allProductsProgramar(){
     allProducts();
 }
@@ -40,23 +48,23 @@ function capturar(){
     
     //variables
     let nombreCapturar = document.getElementById("nombre").value;
-    let precioCapturar = 0;
+    let precioCapturar = precioNombres;
 
-    //Datos primitivos
+    //Datos primitivos (condicionales)
     if (nombreCapturar === "game 1"){
-        precioCapturar= 500;
+        precioCapturar= w;
     };
 
     if (nombreCapturar === "game 2"){
-        precioCapturar= 250;
+        precioCapturar= x;
     };
 
     if (nombreCapturar === "game 3"){
-        precioCapturar= 1200;
+        precioCapturar= y;
     };
 
     if (nombreCapturar === "game 4"){
-        precioCapturar= 400;
+        precioCapturar= z;
     };
     
     if (nombreCapturar !== "game 1" && nombreCapturar !== "game 2" && nombreCapturar !== "game 3" && nombreCapturar !== "game 4"){
@@ -65,12 +73,10 @@ function capturar(){
     };
 
     nuevoSujeto = new persona(nombreCapturar,precioCapturar);
-    console.log(nuevoSujeto);
 
     //LocalStorage ("seleccionar producto")
     localStorage.setItem("escritura" ,JSON.stringify(nuevoSujeto));
     let productoEscritura = JSON.parse(localStorage.getItem("carrito"));
-    console.log(productoEscritura);
     
     //Función a invocar
     agregar();
@@ -117,18 +123,20 @@ function Boton(){
     guardarBtn4.addEventListener('click',fourthBoton);
 };
 
+//Botones
 function firstBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+'game1'+'</td><td>$'+'500'+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+a+'</td><td>$'+w+'</td></tbody>';
 };
 
 function secondBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+'game2'+'</td><td>$'+'250'+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+b+'</td><td>$'+x+'</td></tbody>';
 };
 
 function thirdBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+'game3'+'</td><td>$'+'1200'+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+c+'</td><td>$'+y+'</td></tbody>';
 };
 
 function fourthBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+'game4'+'</td><td>$'+'400'+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+d+'</td><td>$'+z+'</td></tbody>';
 };
+
