@@ -1,5 +1,5 @@
 //Desestructuración de Arreglo
-const nombres = ["game1", "game2", "game3", "game4"];
+const nombres = ["game 1", "game 2", "game 3", "game 4"];
 const precioNombres = [500 , 250 , 1200 , 400];
 
 const [a, b, c, d] = nombres;
@@ -20,6 +20,7 @@ function allProducts(){
         if(this.readyState == 4 && this.status == 200){
             let datosJson = JSON.parse(this.responseText);
             let res = document.getElementById("tabla");
+            
             //localstorage json ("agregar todos los productos")
             localStorage.setItem("carrito" ,JSON.stringify(datosJson));
             let productoCarrito = JSON.parse(localStorage.getItem("carrito"));
