@@ -5,7 +5,6 @@ const precioNombres = [500 , 250 , 1200 , 400];
 const [a, b, c, d] = nombres;
 const [w, x, y, z] = precioNombres;
 
-
 //JSON (agregar todos los productos button)
 function allProductsProgramar(){
     allProducts();
@@ -13,7 +12,7 @@ function allProductsProgramar(){
 
 function allProducts(){
     const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'catalogo.json', true);
+    xhttp.open('GET', 'js/catalogo.json', true);
     xhttp.send();
     xhttp.onreadystatechange = function(){
 
@@ -25,7 +24,7 @@ function allProducts(){
             localStorage.setItem("carrito" ,JSON.stringify(datosJson));
             let productoCarrito = JSON.parse(localStorage.getItem("carrito"));
             console.log(productoCarrito);
-
+            
             for(let item of datosJson){
                 //item. (lo que desee visualizar de mi JSON)
                 //console.log(item)
@@ -91,7 +90,7 @@ function agregar(){
     console.log(titular);
 
     const h = document.createElement('h2');
-    h.textContent = 'Productos en stock:';
+    h.textContent = 'Productos en stock';
     
     titular.appendChild(h);}
 })(window, document,);
@@ -99,6 +98,8 @@ function agregar(){
 //DOM (Event)
 function programarBtn(){
     Boton;
+    borrar;
+    comprar;
 }
 
 function Boton(){
@@ -112,6 +113,18 @@ function Boton(){
     guardarBtn3.addEventListener('click',thirdBoton);
     guardarBtn4.addEventListener('click',fourthBoton);
 };
+
+function borrar(){
+    const borrarBtn = document.querySelector('#delete');
+
+    borrarBtn.addEventListener('click', borrarBtnTotal);
+};
+
+function comprar(){
+    const comprarBtn = document.querySelector('#buyed');
+
+    comprarBtn.addEventListener('click', comprarBtnTotal);
+}
 
 //Botones
 function firstBoton(){
@@ -130,3 +143,22 @@ function fourthBoton(){
     document.getElementById("tabla").innerHTML += '<tbody><td>'+d+'</td><td>$'+z+'</td></tbody>';
 };
 
+function borrarBtnTotal(){
+    location.reload();
+};
+
+function comprarBtnTotal(){
+    location.href = "pages/compra.html";
+};
+
+function regresar(){
+    document.getElementById('return').innerHTML = 'Lo redireccionaremos al instante en <span id="countDown">5</span> segundos....';
+    let count = 5;
+    setInterval(function(){
+        count--;
+        document.getElementById('countDown').innerHTML = count;
+        if(count == 0){
+            location.href = "../index.html";
+        }
+    }, 1000);
+}
