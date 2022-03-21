@@ -57,7 +57,13 @@ function capturar(){
     nombreCapturar === "game 4" && (precioCapturar = z);
 
     if (nombreCapturar !== "game 1" && nombreCapturar !== "game 2" && nombreCapturar !== "game 3" && nombreCapturar !== "game 4"){
-        alert("Este producto no existe")
+        //sweet alert (libreria)
+        swal({
+            title: "Oops!",
+            text: "Este producto no existe!",
+            icon: "error",
+            dangerMode: true,
+          });
         getElementById("tabla").remove;
     };
 
@@ -100,6 +106,7 @@ function programarBtn(){
     Boton;
     borrar;
     comprar;
+    compraNewPage;
 }
 
 function Boton(){
@@ -124,6 +131,12 @@ function comprar(){
     const comprarBtn = document.querySelector('#buyed');
 
     comprarBtn.addEventListener('click', comprarBtnTotal);
+}
+
+function compraNewPage(){
+    const compraNewPageBtn = document.querySelector('#buyCompra');
+
+    compraNewPageBtn.addEventListener('click', compraNewPageBtnTotal);
 }
 
 //Botones
@@ -151,6 +164,15 @@ function comprarBtnTotal(){
     location.href = "pages/compra.html";
 };
 
+function compraNewPageBtnTotal(){
+    swal({
+        title: "Su compra ha sido realizada!",
+        text: "Muchas gracias confiar en nosotros!",
+        icon: "success",
+        dangerMode: true,
+    });
+};
+
 function regresar(){
     document.getElementById('return').innerHTML = 'Lo redireccionaremos al instante en <span id="countDown">5</span> segundos....';
     let count = 5;
@@ -161,4 +183,5 @@ function regresar(){
             location.href = "../index.html";
         }
     }, 1000);
-}
+};
+
