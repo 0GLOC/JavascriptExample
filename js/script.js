@@ -8,7 +8,7 @@ const [w, x, y, z] = precioNombres;
 //JSON (agregar todos los productos button)
 function allProductsProgramar(){
     allProducts();
-}
+};
 
 function allProducts(){
     const xhttp = new XMLHttpRequest();
@@ -31,7 +31,9 @@ function allProducts(){
                 res.innerHTML += `<tr>
                 <td>${item.name}</td>
                 <td>$${item.price}</td>
+                <td>$</td>
                 </tr>`;
+                document.getElementById("botonDelete").style.display = 'flex';
             };
         };
     };
@@ -44,7 +46,7 @@ function capturar(){
     function persona(nombre,precio){
         this.nombre=nombre;
         this.precio=precio;
-    }
+    };
     
     //variables
     let nombreCapturar = document.getElementById("nombre").value;
@@ -75,7 +77,7 @@ function capturar(){
     
     //Función a invocar
     agregar();
-}
+};
 
 //Array
 let baseDatos= [];
@@ -84,7 +86,8 @@ let baseDatos= [];
 function agregar(){
     baseDatos.push(nuevoSujeto);
     console.log(baseDatos);
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>$'+nuevoSujeto.precio+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>$'+nuevoSujeto.precio+'</td><td>$'+''+'</td></tbody>';
+    document.getElementById("botonDelete").style.display = 'flex';
 };
 
 //DOM (Creación de H2 (titulo) mediante createElement)
@@ -106,8 +109,7 @@ function programarBtn(){
     Boton;
     borrar;
     comprar;
-    compraNewPage;
-}
+};
 
 function Boton(){
     const guardarBtn = document.querySelector('#boton1');
@@ -131,29 +133,27 @@ function comprar(){
     const comprarBtn = document.querySelector('#buyed');
 
     comprarBtn.addEventListener('click', comprarBtnTotal);
-}
-
-function compraNewPage(){
-    const compraNewPageBtn = document.querySelector('#buyCompra');
-
-    compraNewPageBtn.addEventListener('click', compraNewPageBtnTotal);
-}
+};
 
 //Botones
 function firstBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+a+'</td><td>$'+w+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+a+'</td><td>$'+w+'</td><td>$'+''+'</td></tbody>';
+    document.getElementById("botonDelete").style.display = 'flex';
 };
 
 function secondBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+b+'</td><td>$'+x+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+b+'</td><td>$'+x+'</td><td>$'+''+'</td></tbody>';
+    document.getElementById("botonDelete").style.display = 'flex';
 };
 
 function thirdBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+c+'</td><td>$'+y+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+c+'</td><td>$'+y+'</td><td>$'+''+'</td></tbody>';
+    document.getElementById("botonDelete").style.display = 'flex';
 };
 
 function fourthBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+d+'</td><td>$'+z+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+d+'</td><td>$'+z+'</td><td>$'+''+'</td></tbody>';
+    document.getElementById("botonDelete").style.display = 'flex';
 };
 
 function borrarBtnTotal(){
@@ -163,25 +163,3 @@ function borrarBtnTotal(){
 function comprarBtnTotal(){
     location.href = "pages/compra.html";
 };
-
-function compraNewPageBtnTotal(){
-    swal({
-        title: "Su compra ha sido realizada!",
-        text: "Muchas gracias confiar en nosotros!",
-        icon: "success",
-        dangerMode: true,
-    });
-};
-
-function regresar(){
-    document.getElementById('return').innerHTML = 'Lo redireccionaremos al instante en <span id="countDown">5</span> segundos....';
-    let count = 5;
-    setInterval(function(){
-        count--;
-        document.getElementById('countDown').innerHTML = count;
-        if(count == 0){
-            location.href = "../index.html";
-        }
-    }, 1000);
-};
-
