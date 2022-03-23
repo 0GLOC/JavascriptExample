@@ -28,10 +28,20 @@ function allProducts(){
             for(let item of datosJson){
                 //item. (lo que desee visualizar de mi JSON)
                 //console.log(item)
+
+                let total=item.price;
+                for(let i of baseDatos) total+=i;
+                console.log(total);
+
+                item.price === 500 && baseDatos.push(w);
+                item.price === 250 && baseDatos.push(x);
+                item.price === 1200 && baseDatos.push(y);
+                item.price === 400 && baseDatos.push(z);
+
                 res.innerHTML += `<tr>
                 <td>${item.name}</td>
                 <td>$${item.price}</td>
-                <td>$</td>
+                <td>$${total}</td>
                 </tr>`;
                 document.getElementById("botonDelete").style.display = 'flex';
             };
@@ -41,7 +51,7 @@ function allProducts(){
 
 //Función invocada desde form con onclick
 function capturar(){
-
+    
     //Constructor de objetos
     function persona(nombre,precio){
         this.nombre=nombre;
@@ -74,21 +84,30 @@ function capturar(){
     //LocalStorage ("seleccionar producto")
     localStorage.setItem("escritura" ,JSON.stringify(nuevoSujeto));
     let productoEscritura = JSON.parse(localStorage.getItem("carrito"));
-    
+
     //Función a invocar
     agregar();
 };
 
-//Array
+//Array vacio
 let baseDatos= [];
 
 //invocación de funcion
 function agregar(){
-    baseDatos.push(nuevoSujeto);
+    let total=nuevoSujeto.precio;
+    for(let i of baseDatos) total+=i;
+    console.log(total);
+
+    nuevoSujeto.precio === 500 && baseDatos.push(w);
+    nuevoSujeto.precio === 250 && baseDatos.push(x);
+    nuevoSujeto.precio === 1200 && baseDatos.push(y);
+    nuevoSujeto.precio === 400 && baseDatos.push(z);
+
     console.log(baseDatos);
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>$'+nuevoSujeto.precio+'</td><td>$'+''+'</td></tbody>';
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoSujeto.nombre+'</td><td>$'+nuevoSujeto.precio+'</td><td>$'+total+'</td></tbody>';
     document.getElementById("botonDelete").style.display = 'flex';
 };
+
 
 //DOM (Creación de H2 (titulo) mediante createElement)
 (function(window, document,){
@@ -96,7 +115,6 @@ function agregar(){
 
     function init(){
     const titular = document.getElementById('first');
-    console.log(titular);
 
     const h = document.createElement('h2');
     h.textContent = 'Productos en stock';
@@ -105,12 +123,6 @@ function agregar(){
 })(window, document,);
 
 //DOM (Event)
-function programarBtn(){
-    Boton;
-    borrar;
-    comprar;
-};
-
 function Boton(){
     const guardarBtn = document.querySelector('#boton1');
     const guardarBtn2 = document.querySelector('#boton2');
@@ -136,30 +148,52 @@ function comprar(){
 };
 
 //Botones
+//Game 1
 function firstBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+a+'</td><td>$'+w+'</td><td>$'+''+'</td></tbody>';
+    let total=w;
+    for(let i of baseDatos) total+=i;
+    console.log(total);
+    const sumarArrayVacio = baseDatos.push(w);
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+a+'</td><td>$'+w+'</td><td>$'+total+'</td></tbody>';
     document.getElementById("botonDelete").style.display = 'flex';
 };
 
+//Game 2
 function secondBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+b+'</td><td>$'+x+'</td><td>$'+''+'</td></tbody>';
+    let total=x;
+    for(let i of baseDatos) total+=i;
+    console.log(total);
+    const sumarArrayVacio = baseDatos.push(x);
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+b+'</td><td>$'+x+'</td><td>$'+total+'</td></tbody>';
     document.getElementById("botonDelete").style.display = 'flex';
 };
 
+//Game 3
 function thirdBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+c+'</td><td>$'+y+'</td><td>$'+''+'</td></tbody>';
+    let total=y;
+    for(let i of baseDatos) total+=i;
+    console.log(total);
+    const sumarArrayVacio = baseDatos.push(y);
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+c+'</td><td>$'+y+'</td><td>$'+total+'</td></tbody>';
     document.getElementById("botonDelete").style.display = 'flex';
 };
 
+//Game 4
 function fourthBoton(){
-    document.getElementById("tabla").innerHTML += '<tbody><td>'+d+'</td><td>$'+z+'</td><td>$'+''+'</td></tbody>';
+    let total=z;
+    for(let i of baseDatos) total+=i;
+    console.log(total);
+    const sumarArrayVacio = baseDatos.push(z);
+    document.getElementById("tabla").innerHTML += '<tbody><td>'+d+'</td><td>$'+z+'</td><td>$'+total+'</td></tbody>';
     document.getElementById("botonDelete").style.display = 'flex';
 };
 
+//Eliminar productos
 function borrarBtnTotal(){
     location.reload();
 };
 
+//Comprar productos
 function comprarBtnTotal(){
     location.href = "pages/compra.html";
 };
