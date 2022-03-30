@@ -1,6 +1,6 @@
 [
-    {"name": "game 1", "price": 500},
-    {"name": "game 2", "price": 250},
-    {"name": "game 3", "price": 1200},
-    {"name": "game 4", "price": 400}
+    {"name": "Devil May Cry", "price": 500},
+    {"name": "Doom", "price": 250},
+    {"name": "Dark Souls", "price": 1200},
+    {"name": "Dishonored", "price": 400}
 ]
