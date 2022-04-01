@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    --bs-body-bg: #E5E5E5;
+}
+#first h2{
+    text-align: center;
+    font-size: 40px;
+    color: #E5E5E5;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background-color: #6c757d;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px #3a3d41;
+    text-shadow: 4px 4px 4px #3a3d41;
+}
+.card-group .bg-secondary:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+    box-shadow: 0 12px 16px #3a3d41;
+}
+.card-title{
+    color: #E5E5E5;
+    font-family: 'Roboto Slab', serif;
+}
+.card-text{
+    color: #E5E5E5;
+    font-size: 17px;
+    font-family: 'Roboto Slab', serif;
+}
+.bg-secondary{
+    border-radius: 10px;
+    margin: 5px;
+}
+#arregloCSS{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#botonAll{
+    margin-top: 15px;
+}
+#botonAll:hover{
+    transform: translateY(-2px);
+    box-shadow: #3a3d41  0 5px 7px;
+}
+#botonDelete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    display: none;
+}
+#delete:hover{
+    transform: translateY(-2px);
+    box-shadow: #3a3d41  0 5px 7px;
+}
+#buyed:hover{
+    transform: translateY(-2px);
+    box-shadow: #3a3d41  0 5px 7px;
+}
+#delete{
+    margin-right: 5px;
+}
+.swal-button {
+    background-color: black;
+}
+#desaparecer{
+    display: none;
+    color: #119200;
+}
+tbody:last-child td:last-child{
+    color: #119200;
+}
+#boton:hover{
+    transform: translateY(-2px);
+    box-shadow: #3a3d41  0 5px 7px;
+}

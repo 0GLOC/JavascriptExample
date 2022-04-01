@@ -3,7 +3,7 @@
 }
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
+	background: #E5E5E5; 
 }
 main {
 	max-width: 800px;
@@ -18,9 +18,9 @@ main {
 	color: #E5E5E5;
 	font-family: 'Roboto Slab', serif;
 	margin-top: 20px;
-	background-color: #212529;
-	border-radius: 10px;
-	box-shadow: #6c757d 5px 5px 5px;
+    background-color: #6c757d;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px #3a3d41;
 }
 
 .formulario {
@@ -113,7 +113,7 @@ main {
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #212529;
+	background: #6c757d;
 	color: #fff;
 	font-weight: bold;
 	border: none;
@@ -127,7 +127,8 @@ main {
 }
 
 .formulario__btn:hover {
-	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+	transform: translateY(-2px);
+    box-shadow: #3a3d41  0 5px 7px;
 }
 
 .formulario__mensaje-exito {

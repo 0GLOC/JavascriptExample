@@ -119,7 +119,7 @@ function agregar(){
     const titular = document.getElementById('first');
 
     const h = document.createElement('h2');
-    h.textContent = 'Videojuegos Digitales';
+    h.textContent = 'KEYS';
     
     titular.appendChild(h);}
 })(window, document,);
