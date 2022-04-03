@@ -1,4 +1,4 @@
-//Desestructuración de Arreglo
+//Array & Desestructuración
 const nombres = ["Devil May Cry", "Doom", "Dark Souls", "Dishonored"];
 const precioNombres = [500 , 250 , 1200 , 400];
 
